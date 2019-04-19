@@ -1,0 +1,38 @@
+.link {
+  fill: none;
+  stroke: #333;
+  stroke-width: 2;
+}
+
+.border {
+  fill: none;
+  shape-rendering: crispEdges;
+  stroke: #aaa;
+}
+
+.node {
+  stroke: #333;
+  stroke-width: 2;
+  fill: #fff;
+  transition: fill 200ms;
+  }
+
+.label {
+    fill: #333;
+    text-anchor: middle;
+}
+
+.selected {
+  stroke: #333;
+  stroke-width: 2;
+  fill: #b8e186;
+  transition: fill 200ms;
+}
+
+.forbidden {
+  stroke: #333;
+  stroke-width: 2;
+  fill: #f1b6da;
+  transition: fill 200ms;
+}
+
