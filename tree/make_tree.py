@@ -22,4 +22,4 @@ G.add_edges_from(edges)
 node_link_data = nx.tree_data(G,root=0)
 
 with open('tree.json','w') as f:
-    json.dump(node_link_data,f)
+    json.dump(node_link_data,f,indent=4, sort_keys=True)
