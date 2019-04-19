@@ -1,24 +1,3 @@
-function contains(arr,elem)
-{
-  return ! (arr.indexOf(elem) == -1);
-}
-
-function link_id(source,target){
-  if (source > target)
-  {
-    let tmp = source;
-    source = target;
-    target = tmp;
-  }
-
-  return "link-"+source+"-"+target;
-}
-
-function forbid(id)
-{
-  d3.select("node")
-}
-
 const width = 600;
 const height = 300;
 const svg = d3.select('#explorable_container')
@@ -28,21 +7,13 @@ const svg = d3.select('#explorable_container')
 
 let this_set = [];
 
-let dod_origin = [width/2, height/2];
 let radius = 15;
-let deselect_color = "#333";
-let select_color = "#d95f02";
-let default_link_color = "#999";
-let default_link_width = 1.5;
 
 let isSelected = [];
-let graph = [];
 let isForbidden = [];
 
 let can_play = true;
-let graph_url = './tree/tree.json';
 /*
-graph_url = './tree/random_tree.json';
 let line = d3.line();
 let base_path;
 
@@ -59,6 +30,7 @@ let celeb_data_1 = [[1.2*width/3.5,height/5],[0.8*width/2,height/20],[2.6*width/
 celeb_data_0 = [[width/5,height/8],[width,height/8]];
 celeb_data_1 = [[width/2.5,height/8],[width,height/8]];
 */
+
 let margin = radius+5;
 
 let o = {
@@ -119,7 +91,6 @@ d3.json(graph_url).then(function(data){
        });
 
 
-    // Create the node circles.
     coin_group = svg.selectAll(".coin-node")
         .data(tree.descendants())
       .enter()
@@ -143,7 +114,6 @@ d3.json(graph_url).then(function(data){
         .attr("dy", radius/3)
         .attr("y", 0);
 
-    // Create the node circles.
     node_group = svg.selectAll(".node-group")
         .data(tree.descendants())
       .enter()
@@ -422,6 +392,7 @@ function update_coins()
   weight_label.text("Set weight: "+ weight_sum);
 }
 
+/*
 function celebrate()
 {
   let celebration = "path";
@@ -507,3 +478,4 @@ function celebrate()
 
   repeat();
 }
+*/
